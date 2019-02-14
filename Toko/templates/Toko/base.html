@@ -1,0 +1,36 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/toko.css' %}">
+        <script src="{% static 'js/jquey-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row bg-header">
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-12">
+                        <h3>Toko Online</h3>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                        <ul class="nav">
+                            <li clas="nav-item">
+                                <a class="nav-link active" href="{% url 'toko' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'tambah' %}">Tambah Barang</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+      </header>
+        {% block content %}
+        {% endblock %}
+        <footer></footer>
+    </body>
+</html>

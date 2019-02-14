@@ -1,0 +1,23 @@
+{% extends 'Toko/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 mb-5"></div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-5">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Tambah Barang</h5>
+                    <p class="card-text text-center">Silahkan menambahkan barang yang ingin anda jual</p>
+                    <form method="POST" class="post.form" enctype="multipart/form-data">{% csrf_token %} {{ form.as_p }}
+                        <button type="submit" class="save btn btn-primary text-center">Save</button>
+                    </form>
+                </div>
+            </div>
+            <a href="{% url 'toko' %}">Kembali ke Home</a>
+        </div>
+        <div class="col-lg-3 col-md-3 mb-5"></div>            
+    </div>
+</div>
+{% endblock %}

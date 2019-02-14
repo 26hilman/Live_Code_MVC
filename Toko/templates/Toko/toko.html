@@ -1,0 +1,21 @@
+{% extends 'Toko/base.html' %}
+{% load static %}
+
+{% block content %}
+{% for data in list_barang %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-5">
+            <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="{{ data.gambar.url }}" alt="">
+                <div class="card-body">
+                    <h3 class="card-text">{{ data.nama_barang }}</h3>
+                    <h6 class="card-text">{{ data.harga }}</h6>
+                    <a href="{% url 'toko_detail' toko_id=data.id %}">Lihat Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}   
